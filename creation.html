@@ -1,0 +1,161 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Développeur Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#accueil">Dev<span>Portfolio</span></a>
+            </div>
+            <ul class="nav-menu">
+           <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="creation.html" class="nav-link">Créations</a></li>
+                <li><a href="service.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">À propos</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav> 
+  
+  
+  
+  
+  
+  <!-- Section Créations -->
+    <section id="creations" class="creations">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Portfolio</div>
+                <h2 class="section-title">Mes dernières <span class="highlight">créations</span></h2>
+                <p class="section-description">
+                    Découvrez une sélection de mes projets web réalisés pour des clients variés
+                </p>
+            </div>
+         
+            <div class="creations-grid">
+                <div class="creation-card" data-category="ecommerce">
+                    <div class="card-image">
+                        <img src="img/logo.png" alt="Projet E-commerce">
+                        <div class="card-overlay">
+                            <a href="https://aymericsoetens.github.io/yoga-du-rire/index.html" class="card-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Voir le projet
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                      
+                        <h3 class="card-title">Yoga du rire</h3>
+                        <p class="card-description">Plateforme e-commerce complète avec panier, paiement sécurisé et tableau de bord admin.</p>
+                    </div>
+                </div>
+
+                <div class="creation-card" data-category="corporate">
+                    <div class="card-image">
+                        <img src="img/logo (2).png" alt="Projet Corporate">
+                        <div class="card-overlay">
+                            <a href="https://lamainocculte.fr/" class="card-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Voir le projet
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                       
+                        <h3 class="card-title">La main occulte</h3>
+                        <p class="card-description">Site vitrine moderne pour agence de communication avec animations fluides.</p>
+                    </div>
+                </div>
+
+                <div class="creation-card" data-category="landing">
+                    <div class="card-image">
+                        <img src="img/banner.JPG" alt="Landing Page">
+                        <div class="card-overlay">
+                            <a href="https://aymericsoetens.github.io/ABC-Positive/" class="card-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Voir le projet
+                            </a>
+                        </div>
+                    </div>
+                
+                    <div class="card-content">
+                       
+                        <h3 class="card-title">ABC Positive</h3>
+                        <p class="card-description">Page événementielle avec compte à rebours et billetterie intégrée.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">Dev<span>Portfolio</span></h3>
+                    <p class="footer-description">
+                        Création de sites web modernes et performants pour donner vie à vos projets digitaux.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                       <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="creation.html" class="nav-link">Créations</a></li>
+                <li><a href="service.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">À propos</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Technologies</h4>
+                    <ul>
+                        <li>HTML5 / CSS3</li>
+                        <li>JavaScript / React</li>
+                        <li>PHP / Laravel</li>
+                        <li>Node.js / Express</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                                 <a href="legal.html" class="nav-link">Mentions légales</a>
+
+                <p>&copy; 2024 DevPortfolio. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
