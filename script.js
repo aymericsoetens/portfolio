@@ -273,28 +273,29 @@ revealStyle.textContent = `
 `;
 document.head.appendChild(revealStyle);
 
-// ========== EFFET DE PARTICULES - VERSION CORRIGÉE ==========
+// ========== EFFET DE PARTICULES - DEUX COULEURS ==========
 class VisibleParticleSystem {
     constructor() {
         this.canvas = document.getElementById('particlesCanvas');
         if (!this.canvas) {
-            console.error("Canvas non trouvé - Assurez-vous d'avoir <canvas id='particlesCanvas'></canvas> dans votre HTML");
+            console.error("Canvas non trouvé");
             return;
         }
         
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
-        this.particleCount = 60;
+        this.particleCount = 5; // Plus de particules pour un meilleur effet
         
         this.init();
         this.animate();
         this.handleResize();
+        
+        console.log("Système de particules démarré avec " + this.particleCount + " particules (Orange + Bleu)");
     }
     
     init() {
         this.setCanvasSize();
         this.createParticles();
-        console.log("Système de particules démarré avec " + this.particleCount + " particules");
     }
     
     setCanvasSize() {
@@ -312,13 +313,17 @@ class VisibleParticleSystem {
     
     createParticles() {
         for (let i = 0; i < this.particleCount; i++) {
+            // Alternance orange/bleu
+            const isOrange = Math.random() > 0.5;
+            const opacity = Math.random() * 0 + 0.3;
+            
             this.particles.push({
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,
                 radius: Math.random() * 4 + 1.5,
                 speedX: (Math.random() - 0.5) * 0.8,
                 speedY: (Math.random() - 0.5) * 0.8,
-                color: `rgba(255, 107, 53, ${Math.random() * 0.5 + 0.3})`
+                color: isOrange ? `rgba(255, 107, 53, ${opacity})` : `rgba(0, 212, 255, ${opacity})`
             });
         }
     }
@@ -332,9 +337,9 @@ class VisibleParticleSystem {
             this.ctx.fillStyle = p.color;
             this.ctx.fill();
 
-            // Effet de glow
-            this.ctx.shadowBlur = 10;
-            this.ctx.shadowColor = '#ff6b35';
+            // Effet de glow selon la couleur
+            this.ctx.shadowBlur = 6;
+            this.ctx.shadowColor = p.color.includes('255, 107, 53') ? '#ff6b35' : '#00d5ff';
             this.ctx.fill();
             this.ctx.shadowBlur = 0;
 
@@ -346,7 +351,6 @@ class VisibleParticleSystem {
             if (p.x < 0 || p.x > this.canvas.width) p.speedX *= -1;
             if (p.y < 0 || p.y > this.canvas.height) p.speedY *= -1;
             
-            // Corriger les positions hors limites
             p.x = Math.max(0, Math.min(this.canvas.width, p.x));
             p.y = Math.max(0, Math.min(this.canvas.height, p.y));
         });
@@ -358,7 +362,7 @@ class VisibleParticleSystem {
     }
 }
 
-// Initialisation des particules
+// Initialisation
 window.addEventListener('DOMContentLoaded', () => {
     new VisibleParticleSystem();
 });
