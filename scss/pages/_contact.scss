@@ -1,0 +1,24 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.contact {
+    background: $dark;
+    padding: 100px 0;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-form {
+    background: $dark-card;
+    padding: 2.5rem;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
