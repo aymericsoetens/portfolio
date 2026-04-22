@@ -1,0 +1,47 @@
+// ============================================
+// VARIABLES
+// ============================================
+
+// Couleurs
+$primary: #ff6b35;
+$primary-dark: #e85d2c;
+$primary-light: #ff8c5a;
+$secondary: #2d2d3a;
+$accent: #00d4ff;
+$accent-dark: #00b8de;
+$dark: #0a0a0f;
+$dark-card: #12121a;
+$dark-hover: #1a1a25;
+$light: #f5f5f7;
+$gray: #8e8e9e;
+$gray-light: #b0b0be;
+$white: #ffffff;
+$success: #00d68f;
+$warning: #ffaa00;
+$danger: #ff4d4d;
+
+// Dégradés
+$gradient-primary: linear-gradient(135deg, $primary 0%, $primary-light 100%);
+$gradient-accent: linear-gradient(135deg, $accent 0%, $accent-dark 100%);
+$gradient-dark: linear-gradient(135deg, $dark 0%, $dark-hover 100%);
+$gradient-card: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+
+// Ombres
+$shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
+$shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+$shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
+$shadow-xl: 0 12px 36px rgba(0,0,0,0.6);
+$shadow-glow: 0px 0px 50px rgba($primary, 0.5);
+$shadow-glow-accent: 0px 0px 30px rgba($accent, 0.5);
+
+// Transitions
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+// Breakpoints
+$breakpoint-md: 768px;
+$breakpoint-sm: 480px;
+
+// Conteneur
+$container-max-width: 1280px;
+$container-padding: 0 24px;

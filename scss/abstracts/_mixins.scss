@@ -1,0 +1,78 @@
+// ============================================
+// MIXINS
+// ============================================
+
+@use 'variables' as *;
+
+// Mixin pour les cartes
+@mixin card-base {
+    background: $dark-card;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: $transition;
+    border: 1px solid rgba(252, 204, 101, 0.884);
+    position: relative;
+}
+
+@mixin card-hover-effect {
+    transform: translateY(-8px);
+    border-color: rgba($primary, 3);
+    box-shadow: $shadow-glow;
+}
+
+@mixin card-hover-line {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: $gradient-primary;
+    transform: scaleX(0);
+    transition: $transition;
+    border-radius: 24px 24px 0 0;
+}
+
+@mixin icon-circle($size: 70px) {
+    width: $size;
+    height: $size;
+    background: $gradient-primary;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: $transition;
+}
+
+@mixin grid-responsive($min-width) {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+}
+
+@mixin btn-base {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: $transition;
+    cursor: pointer;
+    border: none;
+    font-size: 0.9375rem;
+}
+
+@mixin mobile {
+    @media (max-width: #{$breakpoint-md}) {
+        @content;
+    }
+}
+
+@mixin mobile-small {
+    @media (max-width: #{$breakpoint-sm}) {
+        @content;
+    }
+}

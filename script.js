@@ -284,7 +284,7 @@ class VisibleParticleSystem {
         
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
-        this.particleCount = 5; // Plus de particules pour un meilleur effet
+        this.particleCount = 25; // Plus de particules pour un meilleur effet
         
         this.init();
         this.animate();
@@ -366,3 +366,11 @@ class VisibleParticleSystem {
 window.addEventListener('DOMContentLoaded', () => {
     new VisibleParticleSystem();
 });
+// Cursor glow effect
+const cursorGlow = document.getElementById('cursor-glow');
+
+if (cursorGlow) {
+    document.addEventListener('mousemove', (e) => {
+        cursorGlow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+    });
+}

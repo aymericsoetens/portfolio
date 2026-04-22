@@ -1,0 +1,304 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.hero {
+    min-height: 100vh;
+    background: $dark;
+    display: flex;
+    align-items: center;
+    padding: 100px 0 80px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 30% 50%, rgba($primary,0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba($accent,0.021) 0%, transparent 50%);
+        pointer-events: none;
+    }
+}
+
+.hero-container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: $container-padding;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+.hero-content {
+    @include mobile {
+        text-align: center;
+    }
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba($primary, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba($primary, 0.2);
+
+    @include mobile {
+        margin: 0 auto 1.5rem;
+    }
+
+    i {
+        color: $primary;
+        font-size: 0.875rem;
+    }
+    span {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: $primary;
+    }
+}
+
+.hero-title {
+    font-size: 3.75rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+    color: $white;
+
+    @include mobile { font-size: 2.5rem; }
+    @include mobile-small { font-size: 1.8rem; }
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    color: $gray-light;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    @include mobile { justify-content: center; }
+    @include mobile-small { flex-direction: column; }
+}
+
+.hero-image {
+    position: relative;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: 60px;
+    filter: drop-shadow(0 20px 40px rgba(134, 5, 255, 0.658));
+}
+
+.floating-element {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: $gradient-primary;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: $shadow-glow;
+    animation: floatElement 4s ease-in-out infinite;
+    color: $dark;
+
+    @include mobile-small {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+.element1 {
+    top: -25px;
+    left: -25px;
+    animation-delay: 0s;
+    border-radius: 20px;
+    background: $gradient-primary;
+    @include mobile-small { top: -15px; left: -15px; }
+}
+.element2 {
+    bottom: -25px;
+    right: -25px;
+    animation-delay: 1s;
+    border-radius: 30px 20px 30px 20px;
+    background: $gradient-accent;
+    @include mobile-small { bottom: -15px; right: -15px; }
+}
+.element3 {
+    top: 50%;
+    right: -35px;
+    animation-delay: 2s;
+    border-radius: 20px 30px 20px 30px;
+    background: $gradient-primary;
+    @include mobile-small { right: -20px; }
+}
+.element4 {
+    bottom: 20%;
+    left: -35px;
+    animation-delay: 3s;
+    border-radius: 30px;
+    background: $gradient-accent;
+    @include mobile-small { left: -20px; }
+}
+
+@keyframes floatElement {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+// ============================================
+// ============================================
+// LOGO ALTERNATIF : fenêtre de code
+// ============================================
+
+.css-logo-alt {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 0.85;
+    margin: 0 auto;
+    perspective: 800px;
+}
+
+.code-window {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 26, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid rgba($primary, 0.5);
+    box-shadow: $shadow-glow, inset 0 0 20px rgba($primary, 0.1);
+    overflow: hidden;
+    transition: $transition-slow;
+    transform-style: preserve-3d;
+    transform: rotateY(2deg) rotateX(2deg);
+
+    &:hover {
+        transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+        border-color: rgba($accent, 0.6);
+        box-shadow: 0 0 35px rgba($primary, 0.4);
+        
+        .blinking-cursor {
+            animation: blink 0.8s step-end infinite;
+        }
+    }
+}
+
+.window-bar {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 12px 16px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid rgba($primary, 0.3);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    
+    &.red { background: #ff5f56; }
+    &.yellow { background: #ffbd2e; }
+    &.green { background: #27c93f; }
+}
+
+.code-lines {
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: $gray-light;
+    
+    .line {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+        
+        span {
+            color: $primary;
+            font-weight: 600;
+        }
+        
+        &:nth-child(2) span {
+            color: $accent;
+        }
+    }
+    
+    .cursor-line {
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        
+        .blinking-cursor {
+            background: $primary;
+            width: 10px;
+            height: 18px;
+            display: inline-block;
+            animation: blink 1s step-end infinite;
+            margin-left: 4px;
+        }
+    }
+}
+
+.terminal-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 30%, rgba($accent, 0.1), transparent 70%);
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+// Responsive
+@include mobile {
+    .code-lines {
+        padding: 12px;
+        font-size: 0.7rem;
+        .line {
+            margin-bottom: 8px;
+        }
+    }
+    .window-bar {
+        padding: 8px 12px;
+    }
+}
