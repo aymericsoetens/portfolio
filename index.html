@@ -1,106 +1,159 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Développeur Web</title>
-<link rel="stylesheet" href="css/main.min.css">   
+    <title>Web_dev-crafter — Création de Sites Web Modernes & Performants | Normandie</title>
+    <meta name="description"
+        content="Développeur web freelance basé à Mesnil-en-Ouche (Normandie). Sites vitrine, portfolios, SEO optimisé. Du sur-mesure pour donner vie à votre projet digital.">
+    <meta name="keywords"
+        content="création site web, développeur freelance, Normandie, site vitrine, SEO, HTML, CSS, JavaScript">
+    <link rel="canonical" href="https://votredomaine.com/">
 
+    <!-- Open Graph pour partages réseaux sociaux -->
+    <meta property="og:title" content="Web_dev-crafter — Création de Sites Web Modernes">
+    <meta property="og:description"
+        content="Transformez vos idées en réalité digitale avec des sites sur mesure, responsives et optimisés SEO.">
+    <meta property="og:url" content="https://votredomaine.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+
+    <link rel="stylesheet" href="css/main.min.css">
+    <!-- polices et icônes... -->
  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double+Ink:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double+Ink:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-</head>
-<body>
-<div id="cursor-glow"></div>
-  <!-- Navigation -->
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="logo">
-            <a href="index.html">
-                <h1 class="nav-logo">
-                    <span class="highlight">Web</span> Wizard
-                </h1>
-            </a>
-        </div>
-        <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link">Accueil</a></li>
-            <li><a href="creation.html" class="nav-link">Créations</a></li>
-            <li><a href="service.html" class="nav-link">Services</a></li>
-            <li><a href="about.html" class="nav-link">À propos</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</nav>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Web_dev-crafter",
+      "url": "https://votredomaine.com",
+      "description": "Création de sites web modernes et performants.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://votredomaine.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 
-   <!-- Section Accueil/Hero -->
-<section id="accueil" class="hero">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Web_dev-crafter",
+      "url": "https://votredomaine.com",
+      "description": "Développeur web freelance en Normandie, création de sites sur mesure.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mesnil-en-Ouche",
+        "addressRegion": "Normandie"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+</head>
+
+<body>
+    <div id="cursor-glow"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1 class="nav-logo">
+                        <span class="highlight">Web</span> Wizard
+                    </h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="creation.html" class="nav-link">Créations</a></li>
+                <li><a href="service.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">À propos</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Accueil/Hero -->
+    <section id="accueil" class="hero">
         <!-- Canvas pour l'effet de particules -->
-<canvas id="particlesCanvas"></canvas>
-    <div class="hero-container">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-code"></i>
-                <span>Développeur Web</span>
+        <canvas id="particlesCanvas"></canvas>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-code"></i>
+                    <span>Développeur Web</span>
+                </div>
+                <h1 class="hero-title">
+                    Création de sites web
+                    <span class="highlight">modernes</span> et
+                    <span class="highlight">performants</span>
+                </h1>
+                <p class="hero-description">
+                    Transformez vos idées en réalité digitale avec des sites web sur mesure,
+                    responsives et optimisés pour le référencement.
+                </p>
+                <div class="hero-buttons">
+                    <a href="creation.html" class="btn btn-primary">
+                        <i class="fas fa-eye"></i>
+                        Voir mes créations
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        <i class="fas fa-comment"></i>
+                        Me contacter
+                    </a>
+                </div>
             </div>
-            <h1 class="hero-title">
-                Création de sites web 
-                <span class="highlight">modernes</span> et 
-                <span class="highlight">performants</span>
-            </h1>
-            <p class="hero-description">
-                Transformez vos idées en réalité digitale avec des sites web sur mesure, 
-                responsives et optimisés pour le référencement.
-            </p>
-            <div class="hero-buttons">
-                <a href="creation.html" class="btn btn-primary">
-                    <i class="fas fa-eye"></i>
-                    Voir mes créations
-                </a>
-                <a href="contact.html" class="btn btn-secondary">
-                    <i class="fas fa-comment"></i>
-                    Me contacter
-                </a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <div class="image-wrapper">
-                <div class="floating-element element1">
-                    <i class="fab fa-html5"></i>
-                </div>
-                <div class="floating-element element2">
-                    <i class="fab fa-css3-alt"></i>
-                </div>
-                <div class="floating-element element3">
-                    <i class="fab fa-js"></i>
-                </div>
-                <div class="floating-element element4">
-                    <i class="fab fa-react"></i>
-                </div>
-<div class="css-logo-alt">
-    <div class="code-window">
-        <div class="window-bar">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-        </div>
-        <div class="code-lines">
-            <div class="line"><span>&lt;h1&gt;</span>Web<span>&lt;/h1&gt;</span></div>
-            <div class="line"><span>&lt;p&gt;</span>Wizard<span>&lt;/p&gt;</span></div>
-            <div class="line cursor-line"><span>&lt;/&gt;</span><span class="blinking-cursor">|</span></div>
-        </div>
-    </div>
-    <div class="terminal-glow"></div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <div class="floating-element element1">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <div class="floating-element element2">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <div class="floating-element element3">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div class="floating-element element4">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="css-logo-alt">
+                        <div class="code-window">
+                            <div class="window-bar">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="code-lines">
+                                <div class="line"><span>&lt;h1&gt;</span>Web<span>&lt;/h1&gt;</span></div>
+                                <div class="line"><span>&lt;p&gt;</span>Wizard<span>&lt;/p&gt;</span></div>
+                                <div class="line cursor-line"><span>&lt;/&gt;</span><span
+                                        class="blinking-cursor">|</span></div>
+                            </div>
+                        </div>
+                        <div class="terminal-glow">
+
+                        </div>
+                    </div>
 </div>
-      
-</section>
-  
+                </div>
+            </div>
+            
+    </section>
+
 
 
     <!-- Footer -->
@@ -108,11 +161,11 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h2 class="footer-logo">Web_dev-crafter<span>Portfolio</span></h2>
+                    <span class="footer-logo">Web_dev-crafter<span>Portfolio</span></span>
                     <p class="footer-description">
                         Création de sites web modernes et performants pour donner vie à vos projets digitaux.
                     </p>
-                 <!--    <div class="social-links">
+                    <!--    <div class="social-links">
                         <a href="#"><i class="fab fa-github"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -120,17 +173,17 @@
                     </div> -->
                 </div>
                 <div class="footer-section">
-                    <h3>Liens rapides</h3>
+                    <h2>Liens rapides</h2>
                     <ul>
                         <li><a href="index.html" class="nav-link">Accueil</a></li>
-                <li><a href="creation.html" class="nav-link">Créations</a></li>
-                <li><a href="service.html" class="nav-link">Services</a></li>
-                <li><a href="about.html" class="nav-link">À propos</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li><a href="creation.html" class="nav-link">Créations</a></li>
+                        <li><a href="service.html" class="nav-link">Services</a></li>
+                        <li><a href="about.html" class="nav-link">À propos</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Technologies</h4>
+                    <h2>Technologies</h2>
                     <ul>
                         <li>HTML5 / CSS3</li>
                         <li>JavaScript / React</li>
@@ -138,10 +191,10 @@
                         <li>Node.js / Express</li>-->
                     </ul>
                 </div>
-              
+
             </div>
             <div class="footer-bottom">
-                 <a href="legal.html" class="highlight">Mentions légales</a>
+                <a href="legal.html" class="highlight">Mentions légales</a>
                 <p>&copy; 2024Web_dev-crafter. Tous droits réservés.</p>
             </div>
         </div>
@@ -149,4 +202,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

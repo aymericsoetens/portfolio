@@ -95,7 +95,7 @@ if (filterButtons.length > 0 && creationCards.length > 0) {
     });
 
     creationCards.forEach(card => {
-        card.style.transition = 'all 0.3s ease';
+        card.style.transition = 'all 3s ease';
     });
 }
 
@@ -243,35 +243,6 @@ const imageObserver = new IntersectionObserver((entries) => {
 });
 images.forEach(img => imageObserver.observe(img));
 
-// Scroll reveal animation
-const revealElements = document.querySelectorAll('.creation-card, .service-card, .info-card, .apropos-content');
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            revealObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.1 });
-
-revealElements.forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(30px)';
-    element.style.transition = 'all 0.6s ease';
-    revealObserver.observe(element);
-});
-
-const revealStyle = document.createElement('style');
-revealStyle.textContent = `
-    .creation-card.revealed,
-    .service-card.revealed,
-    .info-card.revealed,
-    .apropos-content.revealed {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-    }
-`;
-document.head.appendChild(revealStyle);
 
 // ========== EFFET DE PARTICULES - DEUX COULEURS ==========
 class VisibleParticleSystem {
@@ -366,6 +337,8 @@ class VisibleParticleSystem {
 window.addEventListener('DOMContentLoaded', () => {
     new VisibleParticleSystem();
 });
+
+
 // Cursor glow effect
 const cursorGlow = document.getElementById('cursor-glow');
 
@@ -374,3 +347,53 @@ if (cursorGlow) {
         cursorGlow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
     });
 }
+// ============================================
+// ============================================
+// ANIMATION D'APPARITION SÉQUENTIELLE DES CARTES
+// ============================================
+
+
+
+// Version alternative : apparition au scroll avec IntersectionObserver
+function initScrollRevealCards() {
+    const allCards = document.querySelectorAll('.creation-card, .service-card, .value-card, .info-card');
+    
+    // Cacher toutes les cartes au départ
+    allCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(40px)';
+        card.style.transition = ' fadeInUp 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards';
+    });
+    
+    // Observer chaque carte individuellement
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const card = entry.target;
+                const allCardsInParent = Array.from(card.parentElement.querySelectorAll('.creation-card, .service-card, .value-card, .info-card'));
+                const index = allCardsInParent.indexOf(card);
+                
+                // Délai selon la position dans la grille
+                const delay = index * 1;
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, delay * 1000);
+                
+                cardObserver.unobserve(card);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    allCards.forEach(card => {
+        cardObserver.observe(card);
+    });
+}
+
+// Choisir la méthode souhaitée :
+// Méthode 1 : apparition par section (plus fluide)
+//animateCardsSequential();
+
+// Méthode 2 : apparition individuelle au scroll (décommentez pour tester)
+initScrollRevealCards();

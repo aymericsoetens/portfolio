@@ -20,7 +20,7 @@
     color: $white;
     border: 2px solid rgba(255, 255, 255, 0.2);
     &:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgb(255, 255, 255);
         transform: translateY(-2px);
         border-color: $primary;
     }

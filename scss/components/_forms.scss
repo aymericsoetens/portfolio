@@ -12,14 +12,14 @@
         border-radius: 16px;
         font-family: inherit;
         transition: $transition;
-        background: rgba($dark, 0.5);
+        background: $dark-card;
         font-size: 1rem;
         color: $white;
 
         &:focus {
             border-color: $primary;
             outline: none;
-            background: rgba($dark, 0.8);
+            background: $dark-card;
             box-shadow: 0 0 0 3px rgba($primary, 0.1);
         }
     }
